@@ -1,0 +1,5 @@
+r8a7779-marzen.o: arch/arm/boot/dts/r8a7779-marzen.dts \
+ arch/arm/boot/dts/r8a7779.dtsi \
+ /home/ppelaez/s400_core_renesas_rz/output/linux-3.14/arch/arm/boot/dts/include/dt-bindings/clock/r8a7779-clock.h \
+ /home/ppelaez/s400_core_renesas_rz/output/linux-3.14/arch/arm/boot/dts/include/dt-bindings/interrupt-controller/irq.h \
+ /home/ppelaez/s400_core_renesas_rz/output/linux-3.14/arch/arm/boot/dts/include/dt-bindings/gpio/gpio.h

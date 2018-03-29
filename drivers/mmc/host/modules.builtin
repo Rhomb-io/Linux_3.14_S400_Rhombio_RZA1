@@ -1,0 +1,2 @@
+kernel/drivers/mmc/host/tmio_mmc_core.ko
+kernel/drivers/mmc/host/sh_mobile_sdhi.ko

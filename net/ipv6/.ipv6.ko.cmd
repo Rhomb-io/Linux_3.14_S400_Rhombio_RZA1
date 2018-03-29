@@ -1,0 +1,1 @@
+cmd_net/ipv6/ipv6.ko := arm-linux-gnueabi-ld -EL -r  -T /home/ppelaez/s400_core_renesas_rz/output/linux-3.14/scripts/module-common.lds --build-id  -o net/ipv6/ipv6.ko net/ipv6/ipv6.o net/ipv6/ipv6.mod.o

@@ -1,0 +1,1 @@
+cmd_drivers/usb/gadget/built-in.o :=  arm-linux-gnueabihf-ld -EL    -r -o drivers/usb/gadget/built-in.o drivers/usb/gadget/udc-core.o drivers/usb/gadget/libcomposite.o drivers/usb/gadget/r8a66597-udc.o drivers/usb/gadget/u_ether.o drivers/usb/gadget/usb_f_ecm.o drivers/usb/gadget/usb_f_ecm_subset.o drivers/usb/gadget/usb_f_rndis.o drivers/usb/gadget/g_ether.o 

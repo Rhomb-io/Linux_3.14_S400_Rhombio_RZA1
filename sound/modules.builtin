@@ -1,0 +1,11 @@
+kernel/sound/soundcore.ko
+kernel/sound/core/snd.ko
+kernel/sound/core/snd-timer.ko
+kernel/sound/core/snd-pcm.ko
+kernel/sound/core/snd-compress.ko
+kernel/sound/core/oss/snd-mixer-oss.ko
+kernel/sound/core/oss/snd-pcm-oss.ko
+kernel/sound/soc/snd-soc-core.ko
+kernel/sound/soc/codecs/snd-soc-max9856.ko
+kernel/sound/soc/sh/snd-soc-scux.ko
+kernel/sound/soc/sh/snd-soc-rskrza1.ko

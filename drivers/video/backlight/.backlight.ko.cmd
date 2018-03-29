@@ -1,0 +1,1 @@
+cmd_drivers/video/backlight/backlight.ko := arm-linux-gnueabi-ld -EL -r  -T /home/ppelaez/s400_core_renesas_rz/output/linux-3.14/scripts/module-common.lds --build-id  -o drivers/video/backlight/backlight.ko drivers/video/backlight/backlight.o drivers/video/backlight/backlight.mod.o

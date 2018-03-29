@@ -1,0 +1,1 @@
+arch/arm/boot/dts/sh73a0-kzm9g-reference.dtb: arch/arm/boot/dts/.sh73a0-kzm9g-reference.dtb.dts.tmp arch/arm/boot/dts/skeleton.dtsi

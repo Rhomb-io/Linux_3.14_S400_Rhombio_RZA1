@@ -1,0 +1,12 @@
+kernel/drivers/usb/usb-common.ko
+kernel/drivers/usb/core/usbcore.ko
+kernel/drivers/usb/gadget/udc-core.ko
+kernel/drivers/usb/gadget/libcomposite.ko
+kernel/drivers/usb/gadget/r8a66597-udc.ko
+kernel/drivers/usb/gadget/u_ether.ko
+kernel/drivers/usb/gadget/usb_f_ecm.ko
+kernel/drivers/usb/gadget/usb_f_ecm_subset.ko
+kernel/drivers/usb/gadget/usb_f_rndis.ko
+kernel/drivers/usb/gadget/g_ether.ko
+kernel/drivers/usb/host/r8a66597-hcd.ko
+kernel/drivers/usb/storage/usb-storage.ko

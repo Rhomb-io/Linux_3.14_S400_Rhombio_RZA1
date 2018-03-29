@@ -1,0 +1,6 @@
+r8a73a4-ape6evm-reference.o: \
+ arch/arm/boot/dts/r8a73a4-ape6evm-reference.dts \
+ arch/arm/boot/dts/r8a73a4.dtsi \
+ /home/ppelaez/s400_core_renesas_rz/output/linux-3.14/arch/arm/boot/dts/include/dt-bindings/interrupt-controller/arm-gic.h \
+ /home/ppelaez/s400_core_renesas_rz/output/linux-3.14/arch/arm/boot/dts/include/dt-bindings/interrupt-controller/irq.h \
+ /home/ppelaez/s400_core_renesas_rz/output/linux-3.14/arch/arm/boot/dts/include/dt-bindings/gpio/gpio.h

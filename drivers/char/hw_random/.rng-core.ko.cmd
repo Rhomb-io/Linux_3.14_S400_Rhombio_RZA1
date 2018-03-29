@@ -1,0 +1,1 @@
+cmd_drivers/char/hw_random/rng-core.ko := arm-linux-gnueabi-ld -EL -r  -T /home/ppelaez/s400_core_renesas_rz/output/linux-3.14/scripts/module-common.lds --build-id  -o drivers/char/hw_random/rng-core.ko drivers/char/hw_random/rng-core.o drivers/char/hw_random/rng-core.mod.o

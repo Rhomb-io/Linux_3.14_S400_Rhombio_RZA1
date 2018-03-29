@@ -1,0 +1,4 @@
+r7s72100-ylcdrza1h.o: arch/arm/boot/dts/r7s72100-ylcdrza1h.dts \
+ arch/arm/boot/dts/r7s72100.dtsi \
+ /home/ppelaez/s400_core_renesas_rz/output/linux-3.14/arch/arm/boot/dts/include/dt-bindings/clock/r7s72100-clock.h \
+ /home/ppelaez/s400_core_renesas_rz/output/linux-3.14/arch/arm/boot/dts/include/dt-bindings/interrupt-controller/irq.h

@@ -1,0 +1,1 @@
+cmd_arch/arm/boot/uImage := /bin/sh /home/ppelaez/s400_core_renesas_rz/output/linux-3.14/scripts/mkuboot.sh -A arm -O linux -C none  -T kernel -a 0x08008000 -e 0x08008000 -n 'Linux-3.14.79-ltsi' -d arch/arm/boot/zImage arch/arm/boot/uImage

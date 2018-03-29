@@ -1,0 +1,1 @@
+arch/arm/boot/dts/sh7372-mackerel.dtb: arch/arm/boot/dts/.sh7372-mackerel.dtb.dts.tmp arch/arm/boot/dts/skeleton.dtsi

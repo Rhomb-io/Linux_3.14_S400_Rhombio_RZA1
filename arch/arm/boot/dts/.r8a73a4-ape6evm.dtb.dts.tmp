@@ -1,0 +1,436 @@
+# 1 "arch/arm/boot/dts/r8a73a4-ape6evm.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/r8a73a4-ape6evm.dts"
+# 11 "arch/arm/boot/dts/r8a73a4-ape6evm.dts"
+/dts-v1/;
+# 1 "arch/arm/boot/dts/r8a73a4.dtsi" 1
+# 12 "arch/arm/boot/dts/r8a73a4.dtsi"
+# 1 "/home/ppelaez/s400_core_renesas_rz/output/linux-3.14/arch/arm/boot/dts/include/dt-bindings/interrupt-controller/arm-gic.h" 1
+
+
+
+
+
+
+
+# 1 "/home/ppelaez/s400_core_renesas_rz/output/linux-3.14/arch/arm/boot/dts/include/dt-bindings/interrupt-controller/irq.h" 1
+# 9 "/home/ppelaez/s400_core_renesas_rz/output/linux-3.14/arch/arm/boot/dts/include/dt-bindings/interrupt-controller/arm-gic.h" 2
+# 13 "arch/arm/boot/dts/r8a73a4.dtsi" 2
+
+
+/ {
+ compatible = "renesas,r8a73a4";
+ interrupt-parent = <&gic>;
+ #address-cells = <2>;
+ #size-cells = <2>;
+
+ cpus {
+  #address-cells = <1>;
+  #size-cells = <0>;
+
+  cpu0: cpu@0 {
+   device_type = "cpu";
+   compatible = "arm,cortex-a15";
+   reg = <0>;
+   clock-frequency = <1500000000>;
+  };
+ };
+
+ gic: interrupt-controller@f1001000 {
+  compatible = "arm,cortex-a15-gic";
+  #interrupt-cells = <3>;
+  #address-cells = <0>;
+  interrupt-controller;
+  reg = <0 0xf1001000 0 0x1000>,
+   <0 0xf1002000 0 0x1000>,
+   <0 0xf1004000 0 0x2000>,
+   <0 0xf1006000 0 0x2000>;
+  interrupts = <1 9 ((((1 << (4)) - 1) << 8) | 4)>;
+ };
+
+ timer {
+  compatible = "arm,armv7-timer";
+  interrupts = <1 13 ((((1 << (4)) - 1) << 8) | 8)>,
+        <1 14 ((((1 << (4)) - 1) << 8) | 8)>,
+        <1 11 ((((1 << (4)) - 1) << 8) | 8)>,
+        <1 10 ((((1 << (4)) - 1) << 8) | 8)>;
+ };
+
+ irqc0: interrupt-controller@e61c0000 {
+  compatible = "renesas,irqc";
+  #interrupt-cells = <2>;
+  interrupt-controller;
+  reg = <0 0xe61c0000 0 0x200>;
+  interrupts = <0 0 4>,
+        <0 1 4>,
+        <0 2 4>,
+        <0 3 4>,
+        <0 4 4>,
+        <0 5 4>,
+        <0 6 4>,
+        <0 7 4>,
+        <0 8 4>,
+        <0 9 4>,
+        <0 10 4>,
+        <0 11 4>,
+        <0 12 4>,
+        <0 13 4>,
+        <0 14 4>,
+        <0 15 4>,
+        <0 16 4>,
+        <0 17 4>,
+        <0 18 4>,
+        <0 19 4>,
+        <0 20 4>,
+        <0 21 4>,
+        <0 22 4>,
+        <0 23 4>,
+        <0 24 4>,
+        <0 25 4>,
+        <0 26 4>,
+        <0 27 4>,
+        <0 28 4>,
+        <0 29 4>,
+        <0 30 4>,
+        <0 31 4>;
+ };
+
+ irqc1: interrupt-controller@e61c0200 {
+  compatible = "renesas,irqc";
+  #interrupt-cells = <2>;
+  interrupt-controller;
+  reg = <0 0xe61c0200 0 0x200>;
+  interrupts = <0 32 4>,
+        <0 33 4>,
+        <0 34 4>,
+        <0 35 4>,
+        <0 36 4>,
+        <0 37 4>,
+        <0 38 4>,
+        <0 39 4>,
+        <0 40 4>,
+        <0 41 4>,
+        <0 42 4>,
+        <0 43 4>,
+        <0 44 4>,
+        <0 45 4>,
+        <0 46 4>,
+        <0 47 4>,
+        <0 48 4>,
+        <0 49 4>,
+        <0 50 4>,
+        <0 51 4>,
+        <0 52 4>,
+        <0 53 4>,
+        <0 54 4>,
+        <0 55 4>,
+        <0 56 4>,
+        <0 57 4>;
+ };
+
+ dmac: dma-multiplexer@0 {
+  compatible = "renesas,shdma-mux";
+  #dma-cells = <1>;
+  dma-channels = <20>;
+  dma-requests = <256>;
+  #address-cells = <2>;
+  #size-cells = <2>;
+  ranges;
+
+  dma0: dma-controller@e6700020 {
+   compatible = "renesas,shdma-r8a73a4";
+   reg = <0 0xe6700020 0 0x89e0>;
+   interrupts = <0 220 4
+     0 200 4
+     0 201 4
+     0 202 4
+     0 203 4
+     0 204 4
+     0 205 4
+     0 206 4
+     0 207 4
+     0 208 4
+     0 209 4
+     0 210 4
+     0 211 4
+     0 212 4
+     0 213 4
+     0 214 4
+     0 215 4
+     0 216 4
+     0 217 4
+     0 218 4
+     0 219 4>;
+   interrupt-names = "error",
+     "ch0", "ch1", "ch2", "ch3",
+     "ch4", "ch5", "ch6", "ch7",
+     "ch8", "ch9", "ch10", "ch11",
+     "ch12", "ch13", "ch14", "ch15",
+     "ch16", "ch17", "ch18", "ch19";
+  };
+ };
+
+ thermal@e61f0000 {
+  compatible = "renesas,rcar-thermal";
+  reg = <0 0xe61f0000 0 0x14>, <0 0xe61f0100 0 0x38>,
+    <0 0xe61f0200 0 0x38>, <0 0xe61f0300 0 0x38>;
+  interrupts = <0 69 4>;
+ };
+
+ i2c0: i2c@e6500000 {
+  #address-cells = <1>;
+  #size-cells = <0>;
+  compatible = "renesas,rmobile-iic";
+  reg = <0 0xe6500000 0 0x428>;
+  interrupts = <0 174 4>;
+  status = "disabled";
+ };
+
+ i2c1: i2c@e6510000 {
+  #address-cells = <1>;
+  #size-cells = <0>;
+  compatible = "renesas,rmobile-iic";
+  reg = <0 0xe6510000 0 0x428>;
+  interrupts = <0 175 4>;
+  status = "disabled";
+ };
+
+ i2c2: i2c@e6520000 {
+  #address-cells = <1>;
+  #size-cells = <0>;
+  compatible = "renesas,rmobile-iic";
+  reg = <0 0xe6520000 0 0x428>;
+  interrupts = <0 176 4>;
+  status = "disabled";
+ };
+
+ i2c3: i2c@e6530000 {
+  #address-cells = <1>;
+  #size-cells = <0>;
+  compatible = "renesas,rmobile-iic";
+  reg = <0 0xe6530000 0 0x428>;
+  interrupts = <0 177 4>;
+  status = "disabled";
+ };
+
+ i2c4: i2c@e6540000 {
+  #address-cells = <1>;
+  #size-cells = <0>;
+  compatible = "renesas,rmobile-iic";
+  reg = <0 0xe6540000 0 0x428>;
+  interrupts = <0 178 4>;
+  status = "disabled";
+ };
+
+ i2c5: i2c@e60b0000 {
+  #address-cells = <1>;
+  #size-cells = <0>;
+  compatible = "renesas,rmobile-iic";
+  reg = <0 0xe60b0000 0 0x428>;
+  interrupts = <0 179 4>;
+  status = "disabled";
+ };
+
+ i2c6: i2c@e6550000 {
+  #address-cells = <1>;
+  #size-cells = <0>;
+  compatible = "renesas,rmobile-iic";
+  reg = <0 0xe6550000 0 0x428>;
+  interrupts = <0 184 4>;
+  status = "disabled";
+ };
+
+ i2c7: i2c@e6560000 {
+  #address-cells = <1>;
+  #size-cells = <0>;
+  compatible = "renesas,rmobile-iic";
+  reg = <0 0xe6560000 0 0x428>;
+  interrupts = <0 185 4>;
+  status = "disabled";
+ };
+
+ i2c8: i2c@e6570000 {
+  #address-cells = <1>;
+  #size-cells = <0>;
+  compatible = "renesas,rmobile-iic";
+  reg = <0 0xe6570000 0 0x428>;
+  interrupts = <0 173 4>;
+  status = "disabled";
+ };
+
+ scifa0: serial@e6c40000 {
+  compatible = "renesas,scifa-r8a73a4", "renesas,scifa";
+  reg = <0 0xe6c40000 0 0x100>;
+  interrupts = <0 144 4>;
+  status = "disabled";
+ };
+
+ scifa1: serial@e6c50000 {
+  compatible = "renesas,scifa-r8a73a4", "renesas,scifa";
+  reg = <0 0xe6c50000 0 0x100>;
+  interrupts = <0 145 4>;
+  status = "disabled";
+ };
+
+ scifb2: serial@e6c20000 {
+  compatible = "renesas,scifb-r8a73a4", "renesas,scifb";
+  reg = <0 0xe6c20000 0 0x100>;
+  interrupts = <0 148 4>;
+  status = "disabled";
+ };
+
+ scifb3: serial@e6c30000 {
+  compatible = "renesas,scifb-r8a73a4", "renesas,scifb";
+  reg = <0 0xe6c30000 0 0x100>;
+  interrupts = <0 149 4>;
+  status = "disabled";
+ };
+
+ scifb4: serial@e6ce0000 {
+  compatible = "renesas,scifb-r8a73a4", "renesas,scifb";
+  reg = <0 0xe6ce0000 0 0x100>;
+  interrupts = <0 150 4>;
+  status = "disabled";
+ };
+
+ scifb5: serial@e6cf0000 {
+  compatible = "renesas,scifb-r8a73a4", "renesas,scifb";
+  reg = <0 0xe6cf0000 0 0x100>;
+  interrupts = <0 151 4>;
+  status = "disabled";
+ };
+
+ mmcif0: mmc@ee200000 {
+  compatible = "renesas,sh-mmcif";
+  reg = <0 0xee200000 0 0x80>;
+  interrupts = <0 169 4>;
+  reg-io-width = <4>;
+  status = "disabled";
+ };
+
+ mmcif1: mmc@ee220000 {
+  compatible = "renesas,sh-mmcif";
+  reg = <0 0xee220000 0 0x80>;
+  interrupts = <0 170 4>;
+  reg-io-width = <4>;
+  status = "disabled";
+ };
+
+ pfc: pfc@e6050000 {
+  compatible = "renesas,pfc-r8a73a4";
+  reg = <0 0xe6050000 0 0x9000>;
+  gpio-controller;
+  #gpio-cells = <2>;
+  interrupts-extended =
+   <&irqc0 0 0>, <&irqc0 1 0>, <&irqc0 2 0>, <&irqc0 3 0>,
+   <&irqc0 4 0>, <&irqc0 5 0>, <&irqc0 6 0>, <&irqc0 7 0>,
+   <&irqc0 8 0>, <&irqc0 9 0>, <&irqc0 10 0>, <&irqc0 11 0>,
+   <&irqc0 12 0>, <&irqc0 13 0>, <&irqc0 14 0>, <&irqc0 15 0>,
+   <&irqc0 16 0>, <&irqc0 17 0>, <&irqc0 18 0>, <&irqc0 19 0>,
+   <&irqc0 20 0>, <&irqc0 21 0>, <&irqc0 22 0>, <&irqc0 23 0>,
+   <&irqc0 24 0>, <&irqc0 25 0>, <&irqc0 26 0>, <&irqc0 27 0>,
+   <&irqc0 28 0>, <&irqc0 29 0>, <&irqc0 30 0>, <&irqc0 31 0>,
+   <&irqc1 0 0>, <&irqc1 1 0>, <&irqc1 2 0>, <&irqc1 3 0>,
+   <&irqc1 4 0>, <&irqc1 5 0>, <&irqc1 6 0>, <&irqc1 7 0>,
+   <&irqc1 8 0>, <&irqc1 9 0>, <&irqc1 10 0>, <&irqc1 11 0>,
+   <&irqc1 12 0>, <&irqc1 13 0>, <&irqc1 14 0>, <&irqc1 15 0>,
+   <&irqc1 16 0>, <&irqc1 17 0>, <&irqc1 18 0>, <&irqc1 19 0>,
+   <&irqc1 20 0>, <&irqc1 21 0>, <&irqc1 22 0>, <&irqc1 23 0>,
+   <&irqc1 24 0>, <&irqc1 25 0>;
+ };
+
+ sdhi0: sd@ee100000 {
+  compatible = "renesas,sdhi-r8a73a4";
+  reg = <0 0xee100000 0 0x100>;
+  interrupts = <0 165 4>;
+  cap-sd-highspeed;
+  status = "disabled";
+ };
+
+ sdhi1: sd@ee120000 {
+  compatible = "renesas,sdhi-r8a73a4";
+  reg = <0 0xee120000 0 0x100>;
+  interrupts = <0 166 4>;
+  cap-sd-highspeed;
+  status = "disabled";
+ };
+
+ sdhi2: sd@ee140000 {
+  compatible = "renesas,sdhi-r8a73a4";
+  reg = <0 0xee140000 0 0x100>;
+  interrupts = <0 167 4>;
+  cap-sd-highspeed;
+  status = "disabled";
+ };
+};
+# 13 "arch/arm/boot/dts/r8a73a4-ape6evm.dts" 2
+
+
+/ {
+ model = "APE6EVM";
+ compatible = "renesas,ape6evm", "renesas,r8a73a4";
+
+ chosen {
+  bootargs = "console=ttySC0,115200 ignore_loglevel root=/dev/nfs ip=dhcp rw";
+ };
+
+ memory@40000000 {
+  device_type = "memory";
+  reg = <0 0x40000000 0 0x40000000>;
+ };
+
+ memory@200000000 {
+  device_type = "memory";
+  reg = <2 0x00000000 0 0x40000000>;
+ };
+
+ ape6evm_fixed_3v3: fixedregulator@0 {
+  compatible = "regulator-fixed";
+  regulator-name = "3V3";
+  regulator-min-microvolt = <3300000>;
+  regulator-max-microvolt = <3300000>;
+  regulator-always-on;
+ };
+
+ lbsc {
+  #address-cells = <1>;
+  #size-cells = <1>;
+
+  ethernet@8000000 {
+   compatible = "smsc,lan9118", "smsc,lan9115";
+   reg = <0x08000000 0x1000>;
+   interrupt-parent = <&irqc1>;
+   interrupts = <8 4>;
+   phy-mode = "mii";
+   reg-io-width = <4>;
+   smsc,irq-active-high;
+   smsc,irq-push-pull;
+   vdd33a-supply = <&ape6evm_fixed_3v3>;
+   vddvario-supply = <&ape6evm_fixed_3v3>;
+  };
+ };
+};
+
+&i2c5 {
+ status = "okay";
+ vdd_dvfs: max8973@1b {
+  compatible = "maxim,max8973";
+  reg = <0x1b>;
+
+  regulator-min-microvolt = <935000>;
+  regulator-max-microvolt = <1200000>;
+  regulator-boot-on;
+  regulator-always-on;
+ };
+};
+
+&cpu0 {
+ cpu0-supply = <&vdd_dvfs>;
+ operating-points = <
+
+  1950000 1115000
+  1462500 995000
+ >;
+ voltage-tolerance = <1>;
+};

@@ -1,0 +1,47 @@
+# 1 "arch/arm/boot/dts/sh7372-mackerel.dts"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "arch/arm/boot/dts/sh7372-mackerel.dts"
+# 11 "arch/arm/boot/dts/sh7372-mackerel.dts"
+/dts-v1/;
+# 1 "arch/arm/boot/dts/sh7372.dtsi" 1
+# 11 "arch/arm/boot/dts/sh7372.dtsi"
+/include/ "skeleton.dtsi"
+
+/ {
+ compatible = "renesas,sh7372";
+
+ cpus {
+  #address-cells = <1>;
+  #size-cells = <0>;
+
+  cpu@0 {
+   compatible = "arm,cortex-a8";
+   device_type = "cpu";
+   reg = <0x0>;
+  };
+ };
+
+ pfc: pfc@e6050000 {
+  compatible = "renesas,pfc-sh7372";
+  reg = <0xe6050000 0x8000>,
+        <0xe605801c 0x1c>;
+  gpio-controller;
+  #gpio-cells = <2>;
+ };
+};
+# 13 "arch/arm/boot/dts/sh7372-mackerel.dts" 2
+
+/ {
+ model = "Mackerel (AP4 EVM 2nd)";
+ compatible = "renesas,mackerel";
+
+ chosen {
+  bootargs = "console=tty0, console=ttySC0,115200 earlyprintk=sh-sci.0,115200 root=/dev/nfs nfsroot=,tcp,v3 ip=dhcp mem=240m rw";
+ };
+
+ memory {
+  device_type = "memory";
+  reg = <0x40000000 0x10000000>;
+ };
+};

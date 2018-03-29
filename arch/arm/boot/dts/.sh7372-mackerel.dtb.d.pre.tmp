@@ -1,0 +1,2 @@
+sh7372-mackerel.o: arch/arm/boot/dts/sh7372-mackerel.dts \
+ arch/arm/boot/dts/sh7372.dtsi

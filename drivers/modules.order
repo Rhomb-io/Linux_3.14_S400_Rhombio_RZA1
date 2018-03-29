@@ -1,0 +1,2 @@
+kernel/drivers/video/backlight/backlight.ko
+kernel/drivers/char/hw_random/rng-core.ko

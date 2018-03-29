@@ -1,0 +1,5 @@
+sh73a0-kzm9g-reference.o: arch/arm/boot/dts/sh73a0-kzm9g-reference.dts \
+ arch/arm/boot/dts/sh73a0.dtsi \
+ /home/ppelaez/s400_core_renesas_rz/output/linux-3.14/arch/arm/boot/dts/include/dt-bindings/interrupt-controller/irq.h \
+ /home/ppelaez/s400_core_renesas_rz/output/linux-3.14/arch/arm/boot/dts/include/dt-bindings/gpio/gpio.h \
+ /home/ppelaez/s400_core_renesas_rz/output/linux-3.14/arch/arm/boot/dts/include/dt-bindings/input/input.h
